@@ -1,0 +1,6 @@
+img {
+    float: left;
+    width: 256px;
+    height: 360px;
+    object-fit: cover;
+}

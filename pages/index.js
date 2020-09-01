@@ -6,6 +6,7 @@ const Home = () => {
         <>
             <Head title="Home" />
             <NavBar />
+
             <div className="container">
                 <h3>Home</h3>
             </div>
@@ -14,7 +15,7 @@ const Home = () => {
 }
 
 Home.getInitialProps = (query) => {
-    let res = {email:null}
+    let res = { email: null }
     if (query.query.token) {
         localStorage.setItem("token", "Bearer " + query.query.token);
         res = { email: query.query.email };

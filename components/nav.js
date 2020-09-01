@@ -14,7 +14,7 @@ const NavBar = () => {
         }
     }
     return (
-        <Navbar className="navbar navbar-dark bg-dark mb-4" expand="lg">
+        <Navbar className="navbar navbar-dark bg-dark" expand="lg">
             <div className="container">
                 <Navbar.Brand>
                     <Link href="/">
@@ -34,21 +34,23 @@ const NavBar = () => {
                                 <a className="nav-link">Products</a>
                             </Link>
                         </Nav>
-                        {
-                            logStatus ? (
-                                <Nav>
+                        <Nav style={{float: "right"}}>
+                            {
+                                logStatus ? (
+
                                     <Link href="#">
                                         <a className="nav-link" onClick={logout}>Logout</a>
                                     </Link>
-                                </Nav>
-                            ) :
-                                (<Nav>
-                                    <Link href="/users/login">
-                                        <a className="nav-link">Login</a>
-                                    </Link>
-                                </Nav>)
 
-                        }
+                                ) :
+                                    (
+                                        <Link href="/users/login">
+                                            <a className="nav-link">Login</a>
+                                        </Link>
+                                    )
+
+                            }
+                        </Nav>
 
                     </Nav>
                 </Navbar.Collapse>
